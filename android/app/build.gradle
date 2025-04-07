@@ -1,0 +1,45 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services'
+
+}
+
+android {
+    namespace = "com.example.chat_chat"
+    compileSdk = flutter.compileSdkVersion
+
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11
+    }
+
+    defaultConfig {
+        applicationId = "com.example.chat_chat"
+        minSdk = 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            // Убрано signingConfigs.debug, чтобы избежать использования отладочного ключа
+            // Настройте свой signingConfig в отдельном блоке, если нужно
+        }
+        debug {
+            // Можно оставить отладочные настройки, если нужно
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
